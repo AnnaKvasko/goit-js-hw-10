@@ -6,7 +6,7 @@ import "izitoast/dist/css/iziToast.min.css";
 
 const datePicker = document.querySelector("#datetime-picker");
 const startBtn = document.querySelector("[data-start]");
-// const form = document.querySelector(".feedback-form");
+
 
 const daysEl = document.querySelector("[data-days]");
 const hoursEl = document.querySelector("[data-hours]");
@@ -17,7 +17,7 @@ let timerId = null;
 let userSelectedDate = null;
 
 startBtn.disabled = true;
-
+// datePicker.disabled = true;
 
 const options = {
   enableTime: true,
@@ -43,27 +43,6 @@ const options = {
 flatpickr("#datetime-picker", options);
 
 
-// form.addEventListener("submit", e => {
-//   e.preventDefault();
-
-//   const email = form.elements.email.value.trim();
-//   const message = form.elements.message.value.trim();
-
-//   if (!email || !message) {
-//     iziToast.error({
-//       title: 'Помилка',
-//       message: 'Fill please all fields',
-//     });
-//     return;
-//   }
-
-//   iziToast.success({
-//     title: 'OK',
-//     message: 'Form submitted successfully!',
-//   });
-
-//   form.reset(); 
-// });
 
 startBtn.addEventListener("click", () => {
   startBtn.disabled = true;
