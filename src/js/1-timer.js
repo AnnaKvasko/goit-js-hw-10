@@ -1,5 +1,8 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
+import "../css/styles-timer.css"; 
+
+
 
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
@@ -24,12 +27,29 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
+
+  locale: {
+    weekdays: {
+      shorthand: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+      longhand: [
+        "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+      ],
+    }
+  },
+
   onClose(selectedDates) {
     const selectedDate = selectedDates[0];
     if (selectedDate <= new Date()) {
       iziToast.error({
-        title: 'Error',
-        message: 'Please choose a date in the future',
+    title: 'Error',
+    message: 'Please choose a date in the future!',
+    backgroundColor: '#ef4040',
+    messageColor: '#fff',
+    // iconUrl: 'https://cdn-icons-png.flaticon.com/512/463/463612.png',
+    position: 'topRight',
+//     padding: '20px',
+// width: '302px',
+// height: '64px',
       });
       startBtn.disabled = true;
       userSelectedDate = null;
@@ -89,3 +109,15 @@ function updateTimerDisplay(ms) {
   minutesEl.textContent = addLeadingZero(minutes);
   secondsEl.textContent = addLeadingZero(seconds);
 }
+
+// iziToast.error({
+//     title: 'Error',
+//     message: '"Please choose a date in the future"!',
+//     backgroundColor: '#ef4040;',
+//     messageColor: '#fff',
+//     iconUrl: 'https://cdn-icons-png.flaticon.com/512/463/463612.png',
+//     position: 'bottomRight',
+//     border-bottom: '2px solid #ffbebe',
+//     border-radius: '4px', 
+//     position: `bottomRight`,
+//   });
