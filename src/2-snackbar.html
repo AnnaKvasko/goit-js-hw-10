@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snackbar</title>
     <link rel="stylesheet" href="./css/styles-form.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
   <body>
    
@@ -17,24 +20,29 @@
       </div>
 
       <form class="form">
-        <label>
+        <label class="text-delay">
           Delay (ms)
-          <input type="number" name="delay" required />
+          <input class="input-delay" type="number" name="delay" required />
         </label>
       
-        <fieldset>
-          <legend>State</legend>
-          <label>
-            <input type="radio" name="state" value="fulfilled" required />
+        <fieldset class="legend">
+          <legend class="state-legend">State</legend>
+
+          <div class="radio-group">
+          <label class="radio-text-fulfilled">
+            <input class="radio-input-fulfilled" type="radio" name="state" value="fulfilled" required />
             Fulfilled
           </label>
-          <label>
-            <input type="radio" name="state" value="rejected" required />
+          <label class="radio-text-rejected">
+            <input class="radio-input-rejected" type="radio" name="state" value="rejected" required />
             Rejected
           </label>
+
+        </div>
         </fieldset>
-      
-        <button type="submit">Create notification</button>
+     
+
+        <button class="btn" type="submit">Create notification</button>
       </form>
 
     </main>

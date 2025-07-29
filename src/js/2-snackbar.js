@@ -15,15 +15,15 @@ if (feedbackForm) {
    
     if (!email || !message) {
       iziToast.error({
-        title: 'Помилка',
-        message: 'Fill please all fields',
+        title: 'Error',
+        message: 'Rejected promise in ${delay}ms',
       });
       return;
     }
 
     iziToast.success({
       title: 'OK',
-      message: 'Form submitted successfully!',
+      message: 'Fulfilled promise in ${delay}ms',
     });
 
     feedbackForm.reset();
@@ -45,6 +45,8 @@ if (promiseForm) {
         iziToast.success({
           title: '✅ Success',
           message: `Fulfilled promise in ${ms}ms`,
+          background: `#59a10d`,
+
         });
       })
       .catch(ms => {
